@@ -1,0 +1,22 @@
+name: demo-ci
+
+on:
+  push:
+    branches: [ "main" ]
+  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: deploy via ssh
+      uses: appleboy/ssh-action@v1.0.3
+      with: 
+        host: ${{secrets.SERVER_HOST}}
+        uname: ${{secrets.SERVER_USER}}
+        key: ${{secrets.SERVER_SSH_KEY}}
+        script:
+          cd /var/www/html/Demo- 
+          git pull origin main
