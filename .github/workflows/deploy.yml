@@ -20,3 +20,4 @@ jobs:
           script: | 
             cd /var/www/html/demo-
             sudo git pull
+            echo "this working im happy :) "
