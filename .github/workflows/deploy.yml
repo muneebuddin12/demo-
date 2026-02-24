@@ -18,6 +18,5 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: | 
-            whoami
-            hostname
-            pwd
+            cd /var/www/html
+            sudo git pull
